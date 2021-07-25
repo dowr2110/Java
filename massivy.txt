@@ -1,0 +1,25 @@
+   System.out.println("\nzadanie --------------------------------------------------------------------------------");
+        int[] nn =new int[4];
+        int[] nn2 =new int[4];
+        int[] nn3 =new int[4];
+        nn[0]=2;
+        nn[1]=3;
+        nn2[0]=3;
+        nn2[1]=3;
+        nn2[2]=2;
+        nn2[3]=1;
+        int uu=0;
+        int uu2=0;
+        for (int i=0;i< nn.length;i++){
+            for (int j=0;j< nn2.length;j++) {
+                if (nn2[j] == nn[uu]) {
+                    nn3[uu2]=nn2[j];
+                    uu2++;
+                }
+            }
+            uu++;
+        }
+
+        for (int i=0;i<4;i++) {
+            System.out.println(nn3[i]);
+        }

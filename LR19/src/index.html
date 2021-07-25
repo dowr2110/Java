@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>LR19</title>
+</head>
+<body>
+
+<a href="Ccc?CBean=old">Call Ccc3(GET)</a>
+<br><br>
+<form action="Ccc" method="post">
+    <table>
+        <tr> <td> <label for = "Value1">Value1</label> </td>
+            <td> <input type = "text" name="Value1" size = "20"> </td>
+        </tr>
+        <tr> <td> <label for = "Value2">Value2</label></td>
+            <td><input type = "text" name="Value2" size = "20"></td>
+        </tr>
+        <tr> <td> <label for = "Value3">Value3</label></td>
+            <td><input type = "text" name="Value3" size = "20"></td>
+        </tr>
+    </table>
+    <label>Old </label><input type = "radio" name="CBean"  value = "old" size = "20">
+    <label>New </label><input type = "radio" name="CBean"  value = "new" size = "20" checked="checked">
+    <input type = "submit" name="press"  value = "Call Ccc(POST)" size = "20">
+</form>
+<br><br>
+<a href="Ccc1.jsp">Call Ccc1.jsp(access block by filter 2)</a>
+<br><br>
+<a href="Ccc1?CBeann=old">Call Ccc5(GET; FilterChain)</a>
+<br><br>
+</body>
+</html>

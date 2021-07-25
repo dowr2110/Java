@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>LR17</title>
+</head>
+<body>
+<br>
+<a href="Ggg?urln=URL1&page=555">Ggg URL1</a>
+<br><br>
+<a href="Ggg?urln=URL2&page=2000">Ggg URL2</a>
+<br><br>
+<a href="Ggg?urln=&page=777">Ggg without urln</a>
+<br><br>
+<a href="paramsUrl.jsp">to paramsUrl.jsp</a>
+<br><br>
+
+
+<a href="Ccc?CBean=old">Call Ccc(GET)</a>
+<br><br>
+
+<form action="Ccc" method="post">
+    <table>
+        <tr> <td> <label for = "Value1">Value1</label> </td>
+            <td> <input type = "text" name="Value1" size = "20"> </td>
+        </tr>
+        <tr> <td> <label for = "Value2">Value2</label></td>
+            <td><input type = "text" name="Value2" size = "20"></td>
+        </tr>
+        <tr> <td> <label for = "Value3">Value3</label></td>
+            <td><input type = "text" name="Value3" size = "20"></td>
+        </tr>
+    </table>
+    <label>Old </label><input type = "radio" name="CBean"  value = "old" size = "20">
+    <label>New </label><input type = "radio" name="CBean"  value = "new" size = "20" checked="checked">
+    <input type = "submit" name="press"  value = "Call Ccc(POST)" size = "20">
+    <br><br>
+</form>
+
+
+<h1>Request Attributes</h1>
+<a href="Ccc1?CBean=old">Call Ccc1(GET)</a>
+<br><br>
+<form action="Ccc1" method="post">
+    <table>
+        <tr> <td> <label for = "Value1">Value1</label> </td>
+            <td> <input type = "text" name="Value1" size = "20"> </td>
+        </tr>
+        <tr> <td> <label for = "Value2">Value2</label></td>
+            <td><input type = "text" name="Value2" size = "20"></td>
+        </tr>
+        <tr> <td> <label for = "Value3">Value3</label></td>
+            <td><input type = "text" name="Value3" size = "20"></td>
+        </tr>
+    </table>
+    <label>Old </label><input type = "radio" name="CBean"  value = "old" size = "20">
+    <label>New </label><input type = "radio" name="CBean"  value = "new" size = "20" checked="checked">
+    <input type = "submit" name="press"  value = "Call Ccc1(POST)" size = "20">
+</form>
+<br><br>
+
+<h1> Session Attributes</h1>
+<a href="Ccc2?CBean=old">Call Ccc2(GET)</a>
+<br><br>
+<form action="Ccc2" method="post">
+    <table>
+        <tr> <td> <label for = "Value1">Value1</label> </td>
+            <td> <input type = "text" name="Value1" size = "20"> </td>
+        </tr>
+        <tr> <td> <label for = "Value2">Value2</label></td>
+            <td><input type = "text" name="Value2" size = "20"></td>
+        </tr>
+        <tr> <td> <label for = "Value3">Value3</label></td>
+            <td><input type = "text" name="Value3" size = "20"></td>
+        </tr>
+    </table>
+    <label>Old </label><input type = "radio" name="CBean"  value = "old" size = "20">
+    <label>New </label><input type = "radio" name="CBean"  value = "new" size = "20" checked="checked">
+    <input type = "submit" name="press"  value = "Call Ccc1(POST)" size = "20">
+</form>
+<br><br>
+</body>
+</html>

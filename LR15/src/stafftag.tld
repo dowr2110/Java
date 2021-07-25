@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>1.2</jsp-version>
+    <short-name>StaffTag</short-name>
+    <uri>stafftag.tld</uri>
+    <tag>
+        <name>surname</name>
+        <tag-class>stafftag.Surname</tag-class>
+        <body-content>EMPTY</body-content>
+        <attribute>
+            <name>value</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <!-- ........................................ -->
+    <tag>
+        <name>dossier</name>
+        <tag-class>stafftag.Dossier</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>action</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <name>lastname</name>
+        <tag-class>stafftag.Lastname</tag-class>
+        <body-content>EMPTY</body-content>//ne soderjit tela
+        <attribute>
+            <name>value</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+    <tag>
+        <name>sex</name>
+        <tag-class>stafftag.Sex</tag-class>
+        <body-content>EMPTY</body-content>
+    </tag>
+    <tag>
+        <name>submit</name>
+        <tag-class>stafftag.Submit</tag-class>
+        <body-content>EMPTY</body-content>
+    </tag>
+</taglib>

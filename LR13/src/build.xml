@@ -1,0 +1,34 @@
+<project name="LR12" default = "copy" >
+    <target name="init">
+        <echo message="Build ANaive Project" />
+        <property name = "server"
+                  value = "C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat99\" />
+        <property name = "work"
+                  value = "C:\Довр\ФИТ\3 КУРС\6 сем\Программирование в интернет\лабараторные\LR13\" />
+    </target>
+    <target name="compile" depends ="init">
+        <delete verbose ="true">
+            <fileset dir="${work}build"/>
+        </delete>
+        <javac srcdir = "${work}src"
+               destdir = "${work}build"
+               classpath = "${server}lib\servlet-api.jar;${server}lib\commons-httpclient-3.1.jar;${server}lib\httpclient5-5.0.3.jar;${server}lib\httpcore5-5.0.3.jar"/>
+    </target>
+    <target name="create" depends ="compile">
+        <delete dir= "${server}webapps\LR13\" />
+        <mkdir dir= "${server}webapps\LR13\" />
+        <mkdir dir= "${server}webapps\LR13\WEB-INF" />
+    </target>
+
+    <target name="copy" depends ="create">
+        <copy file= "${work}src\web.xml"
+              todir="${server}webapps\LR13\WEB-INF\" />
+        <copy file= "${work}src\index.html"
+              todir="${server}webapps\LR13\" />
+        <copy file= "${work}src\hello.html"
+              todir="${server}webapps\LR13\" />
+        <copy todir="${server}webapps\LR13\WEB-INF\classes">
+            <fileset dir="${work}build"/>
+        </copy>
+    </target>
+</project>

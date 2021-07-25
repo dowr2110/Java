@@ -1,0 +1,46 @@
+<project name="LR16" default = "copy" >
+    <target name="init">
+        <echo message="Building lab_15 Project" />
+        <property name = "server"
+                  value = "C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat99\webapps\LR20\" />
+        <property name = "work"
+                  value = "C:\Довр\ФИТ\3 КУРС\6 сем\Программирование в интернет\лабараторные\LR20\" />
+    </target>
+
+    <target name="compile" depends ="init">
+        <delete verbose ="true">
+            <fileset dir="${work}build"/>
+        </delete>
+        <javac srcdir    = "${work}src" destdir   = "${work}build">
+            <classpath>
+                <fileset dir= "${work}lib\" />
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="create" depends ="compile">
+        <delete dir= "${server}" />
+        <mkdir dir= "${server}" />
+        <mkdir dir= "${server}WEB-INF" />
+        <mkdir dir= "${server}WEB-INF\lib" />
+        <mkdir dir= "${server}WEB-INF\classes" />
+    </target>
+
+    <target name="copy" depends ="create">
+        <copy file= "${work}src\web.xml"
+              todir="${server}WEB-INF" />
+
+        <copy file= "${work}src\index.html"
+              todir="${server}" />
+
+
+
+        <copy todir="${server}WEB-INF\classes">
+            <fileset dir="${work}build"/>
+        </copy>
+        <copy todir="${server}WEB-INF\lib">
+            <fileset dir="${work}lib"/>
+        </copy>
+    </target>
+
+</project>
