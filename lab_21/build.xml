@@ -1,0 +1,56 @@
+<project name="Lab_21" default = "copy" > 
+<target name="init">     
+	<echo message="Building Lab_21 Project" /> 
+	<property name = "server"
+		value = "C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat99\webapps\Lab_21\" />
+	<property name = "work"
+		value = "C:\Довр\ФИТ\3 КУРС\6 сем\Vladanak\ПИ - Программирование Интернет\ПИ - Программирование Интернет\Лабораторные работы\Другое\Другое\lab_21\" />
+</target> 
+
+<target name="compile" depends ="init"> 
+	<delete verbose ="true">            
+		<fileset dir="${work}build"/>  
+	</delete>       
+	<javac srcdir    = "${work}src" destdir   = "${work}build">
+		<classpath>
+			<fileset dir= "${work}lib\" /> 
+		</classpath>
+	</javac>            	
+</target> 
+
+<target name="create" depends ="compile">     
+	<delete dir= "${server}" />
+	<mkdir dir= "${server}" />
+	<mkdir dir= "${server}html" />  
+	<mkdir dir= "${server}WEB-INF" />     
+	<mkdir dir= "${server}WEB-INF\classes" />     
+</target>    
+
+<target name="copy" depends ="create">     
+	<copy file= "${work}WEB-INF\web.xml"
+          todir="${server}WEB-INF" />     
+	<copy file= "${work}index.html"
+         todir="${server}" />      
+	<copy file= "${work}html\address.html"
+         todir="${server}html" />     
+	<copy file= "${work}html\education.html"
+         todir="${server}html" />   
+	<copy file= "${work}html\form.html"
+         todir="${server}" />   
+	<copy file= "${work}html\formJSON.html"
+         todir="${server}" />  	
+	<copy file= "${work}html\formSync.html"
+         todir="${server}" /> 		 
+	
+	<copy todir="${server}WEB-INF\lib">
+		 <fileset dir="${work}lib"/> 
+	</copy>  
+	<copy todir="${server}WEB-INF\classes">
+		 <fileset dir="${work}build"/> 
+	</copy>  
+	<copy todir="${server}">
+		 <fileset dir="${work}js"/> 
+	</copy>  
+</target>  
+
+</project>
